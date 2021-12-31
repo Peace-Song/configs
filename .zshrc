@@ -103,6 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias preview="open -a Preview"
 alias textedit="open -a TextEdit"
+alias taste="cd ~/Workspace/naver/taste"
+alias tapas="cd ~/Workspace/naver/tapas"
 # alias pip3="python3 -m pip"
 # alias virtualenv="python3 -m virtualenv"
 
