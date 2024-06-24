@@ -1,5 +1,5 @@
-# CodeWhisperer pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
+# Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -113,12 +113,16 @@ source $ZSH/oh-my-zsh.sh
 TASTE_PATH="~/Workspace/naver/taste"
 TAPAS_PATH="~/Workspace/naver/tapas"
 MUNDO_PATH="~/Workspace/naver/mundo"
+SLOOP_PATH="~/Workspace/naver/sloop"
+AIRPORT_PATH="~/Workspace/naver/airport"
 
 alias preview="open -a Preview"
 alias textedit="open -a TextEdit"
 alias taste="cd $TASTE_PATH"
 alias tapas="cd $TAPAS_PATH"
 alias mundo="cd $MUNDO_PATH"
+alias sloop="cd $SLOOP_PATH"
+alias airport="cd $AIRPORT_PATH"
 alias mobile-web="cd $TASTE_PATH/packages/mobile-web"
 alias api="cd $TASTE_PATH/packages/api"
 alias gateway="cd $TASTE_PATH/packages/gateway"
@@ -130,6 +134,10 @@ alias adhocBatch="cd $TAPAS_PATH/packages/adhocBatch"
 alias jp-mobile-web="cd $MUNDO_PATH/packages/jp/mobile-web"
 alias yj-api="cd $MUNDO_PATH/packages/jp/yj-api"
 alias lp-api="cd $MUNDO_PATH/packages/jp/lp-api"
+alias cs-bus="cd $SLOOP_PATH/packages/cs-bus"
+alias end-bus="cd $SLOOP_PATH/packages/end-bus"
+
+alias git="LANG=en_US git"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -153,7 +161,7 @@ export PATH="$PNPM_HOME:$PATH"
 # vpn 연결 
 yvpn() {
   DOMAINS=$(curl -s "https://lambda-real.navercorp.com/api/v1/web/taste/default/yj-vpn-domain.json"| jq -r .result)
-  sudo openconnect -s "vpn-slice $DOMAINS"  -b --protocol anyconnect ptnr-vpn.yahoo.co.jp/login_603 --no-dtls -u t-hwsong
+  sudo openconnect --useragent=AnyConnect -s "vpn-slice $DOMAINS"  -b --protocol anyconnect ptnr-vpn.yahoo.co.jp/login_603 --no-dtls -u t-hwsong
 }
 
 # vpn 종료
@@ -164,5 +172,9 @@ kill-yvpn() {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# CodeWhisperer post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
+# Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/peacesong/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
