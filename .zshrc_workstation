@@ -163,12 +163,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# vpn 연결 
-yvpn() {
-  DOMAINS=$(curl -s "https://lambda-real.navercorp.com/api/v1/web/taste/default/yj-vpn-domain.json"| jq -r .result)
-  sudo openconnect --useragent=AnyConnect -s "vpn-slice $DOMAINS"  -b --protocol anyconnect ptnr-vpn.yahoo.co.jp/login_603 --no-dtls -u t-hwsong
-}
-
 # vpn 종료
 kill-yvpn() {
   sudo kill -9 $(pgrep openconnect)
