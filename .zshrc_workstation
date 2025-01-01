@@ -110,11 +110,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-TASTE_PATH="~/Workspace/naver/taste"
-TAPAS_PATH="~/Workspace/naver/tapas"
-MUNDO_PATH="~/Workspace/naver/mundo"
-SLOOP_PATH="~/Workspace/naver/sloop"
-AIRPORT_PATH="~/Workspace/naver/airport"
+TASTE_PATH="~/Workspace/naver/jp/taste"
+TAPAS_PATH="~/Workspace/naver/jp/tapas"
+MUNDO_PATH="~/Workspace/naver/jp/mundo"
+KR_PATH="~/Workspace/naver/kr"
+SLOOP_PATH="~/Workspace/naver/kr/sloop"
+AIRPORT_PATH="~/Workspace/naver/kr/airport"
 
 alias preview="open -a Preview"
 alias textedit="open -a TextEdit"
@@ -123,19 +124,20 @@ alias tapas="cd $TAPAS_PATH"
 alias mundo="cd $MUNDO_PATH"
 alias sloop="cd $SLOOP_PATH"
 alias airport="cd $AIRPORT_PATH"
-alias mobile-web="cd $TASTE_PATH/packages/mobile-web"
-alias api="cd $TASTE_PATH/packages/api"
+# alias mobile-web="cd $TASTE_PATH/packages/mobile-web"
+# alias api="cd $TASTE_PATH/packages/api"
 alias gateway="cd $TASTE_PATH/packages/gateway"
-alias server="cd $TAPAS_PATH/packages/server"
-alias model="cd $TAPAS_PATH/packages/model"
-alias common="cd $TAPAS_PATH/packages/common"
-alias tapasBatch="cd $TAPAS_PATH/packages/batch"
-alias adhocBatch="cd $TAPAS_PATH/packages/adhocBatch"
+# alias server="cd $TAPAS_PATH/packages/server"
+#alias model="cd $TAPAS_PATH/packages/model"
+# alias common="cd $TAPAS_PATH/packages/common"
+# alias tapasBatch="cd $TAPAS_PATH/packages/batch"
+# alias adhocBatch="cd $TAPAS_PATH/packages/adhocBatch"
 alias jp-mobile-web="cd $MUNDO_PATH/packages/jp/mobile-web"
 alias yj-api="cd $MUNDO_PATH/packages/jp/yj-api"
 alias lp-api="cd $MUNDO_PATH/packages/jp/lp-api"
 alias cs-bus="cd $SLOOP_PATH/packages/cs-bus"
 alias end-bus="cd $SLOOP_PATH/packages/end-bus"
+alias api="cd $KR_PATH/api"
 
 alias git="LANG=en_US git"
 
@@ -155,7 +157,10 @@ export PATH="/Users/peacesong/Workspace/test/nested-field/mongodb-macos-x86_64-5
 
 # pnpm
 export PNPM_HOME="/Users/peacesong/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 # pnpm end
 
 # vpn 연결 
@@ -178,3 +183,17 @@ kill-yvpn() {
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/peacesong/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+export KUBERNETES_CLI_PATH=/Users/peacesong/Workspace/test/n2c-test
+export PATH=$KUBERNETES_CLI_PATH:$PATH
+export HELM_PATH=/Users/peacesong/Workspace/test/n2c-test
+export PATH=$HELM_PATH:$PATH
+
+export N2C_CLI_PATH=/Users/peacesong/Workspace/test/n2c-test
+export PATH=$N2C_CLI_PATH:$PATH
