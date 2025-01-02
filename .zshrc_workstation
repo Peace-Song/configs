@@ -113,9 +113,9 @@ source $ZSH/oh-my-zsh.sh
 TASTE_PATH="~/Workspace/naver/jp/taste"
 TAPAS_PATH="~/Workspace/naver/jp/tapas"
 MUNDO_PATH="~/Workspace/naver/jp/mundo"
-KR_PATH="~/Workspace/naver/kr"
-SLOOP_PATH="~/Workspace/naver/kr/sloop"
-AIRPORT_PATH="~/Workspace/naver/kr/airport"
+KR_PATH="~/Workspace/naver"
+SLOOP_PATH="~/Workspace/naver/sloop"
+AIRPORT_PATH="~/Workspace/naver/airport"
 
 alias preview="open -a Preview"
 alias textedit="open -a TextEdit"
