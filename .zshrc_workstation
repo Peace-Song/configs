@@ -78,8 +78,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git 
-  zsh-syntax-highlighting 
+  git
+  zsh-syntax-highlighting
   zsh-autosuggestions
 )
 
@@ -110,34 +110,41 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-TASTE_PATH="~/Workspace/naver/jp/taste"
-TAPAS_PATH="~/Workspace/naver/jp/tapas"
-MUNDO_PATH="~/Workspace/naver/jp/mundo"
-KR_PATH="~/Workspace/naver"
-SLOOP_PATH="~/Workspace/naver/sloop"
-AIRPORT_PATH="~/Workspace/naver/airport"
+TASTE_PATH="~/Workspace/naver/maps-service/jp/taste"
+TAPAS_PATH="~/Workspace/naver/maps-service/jp/tapas"
+MUNDO_PATH="~/Workspace/naver/maps-service/jp/mundo"
+NAVER_PATH="~/Workspace/naver"
+MAPS_SERVICE_PATH="~/Workspace/naver/maps-service"
+SLOOP_PATH="~/Workspace/naver/maps-service/sloop"
+AIRPORT_PATH="~/Workspace/naver/maps-service/airport"
+BOOKING_PATH="~/Workspace/naver/booking"
 
 alias preview="open -a Preview"
 alias textedit="open -a TextEdit"
-alias taste="cd $TASTE_PATH"
-alias tapas="cd $TAPAS_PATH"
-alias mundo="cd $MUNDO_PATH"
-alias sloop="cd $SLOOP_PATH"
-alias airport="cd $AIRPORT_PATH"
+alias naver="cd $NAVER_PATH"
+# alias taste="cd $TASTE_PATH"
+# alias tapas="cd $TAPAS_PATH"
+# alias mundo="cd $MUNDO_PATH"
+# alias sloop="cd $SLOOP_PATH"
+# alias airport="cd $AIRPORT_PATH"
 # alias mobile-web="cd $TASTE_PATH/packages/mobile-web"
 # alias api="cd $TASTE_PATH/packages/api"
-alias gateway="cd $TASTE_PATH/packages/gateway"
+# alias gateway="cd $TASTE_PATH/packages/gateway"
 # alias server="cd $TAPAS_PATH/packages/server"
-#alias model="cd $TAPAS_PATH/packages/model"
+# alias model="cd $TAPAS_PATH/packages/model"
 # alias common="cd $TAPAS_PATH/packages/common"
 # alias tapasBatch="cd $TAPAS_PATH/packages/batch"
 # alias adhocBatch="cd $TAPAS_PATH/packages/adhocBatch"
-alias jp-mobile-web="cd $MUNDO_PATH/packages/jp/mobile-web"
-alias yj-api="cd $MUNDO_PATH/packages/jp/yj-api"
-alias lp-api="cd $MUNDO_PATH/packages/jp/lp-api"
-alias cs-bus="cd $SLOOP_PATH/packages/cs-bus"
-alias end-bus="cd $SLOOP_PATH/packages/end-bus"
-alias api="cd $KR_PATH/api"
+# alias jp-mobile-web="cd $MUNDO_PATH/packages/jp/mobile-web"
+# alias yj-api="cd $MUNDO_PATH/packages/jp/yj-api"
+# alias lp-api="cd $MUNDO_PATH/packages/jp/lp-api"
+# alias cs-bus="cd $SLOOP_PATH/packages/cs-bus"
+# alias end-bus="cd $SLOOP_PATH/packages/end-bus"
+alias api="cd $MAPS_SERVICE_PATH/api"
+alias inapp="cd $MAPS_SERVICE_PATH/inapp"
+alias booking-web="cd $BOOKING_PATH/booking-web"
+alias order="cd $BOOKING_PATH/booking-web/packages/user/order"
+alias booking="cd $BOOKING_PATH/booking-web/packages/user"
 
 alias git="LANG=en_US git"
 
@@ -185,3 +192,12 @@ export PATH=$HELM_PATH:$PATH
 
 export N2C_CLI_PATH=/Users/peacesong/Workspace/test/n2c-test
 export PATH=$N2C_CLI_PATH:$PATH
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+export PATH="$HOME/.local/bin:$PATH"
+
+
+# [[ -f ~/.inshellisense/init/zsh/init.zsh ]] && source ~/.inshellisense/init/zsh/init.zsh
